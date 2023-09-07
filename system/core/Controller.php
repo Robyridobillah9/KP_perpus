@@ -70,7 +70,7 @@ class CI_Controller {
 	 *
 	 * @return	void
 	 */
-	public function __construct()
+	public function __construct() 
 	{
 		self::$instance =& $this;
 
