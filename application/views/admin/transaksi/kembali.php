@@ -1,11 +1,11 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Transaksi Peminjaman
+        Transaksi Pengembalian
     </h1>
     <ol class="breadcrumb">
-        <li><a href="<?= base_url('home') ?>"><i class="fa fa-dashboard"></i> Transaksi</a></li>
-        <li class="active">Peminjaman</li>
+        <li><a href="<?= base_url('admin') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">Pengembalian</li>
     </ol>
 </section>
 
@@ -41,7 +41,7 @@
                                     <td><?= date('d-M-Y', strtotime($trx['tgl_kembali'])) ?></td>
                                     <td><?= 'Rp.'.number_format($trx['denda']) ?></td>
                                     <td class="text-center">
-                                        <a href="<?= base_url('laporan/kembali/'.$trx['id']) ?>" target="_blank" class="btn btn-sm btn-success">Cetak</a>
+                                        <!-- <a href="<?= base_url('laporan/'.$trx['id']) ?>" target="_blank" class="btn btn-sm btn-success">Cetak</a> -->
                                         <a href="<?= base_url('transaksi/hapus/'.$trx['id']) ?>" class="btn btn-sm btn-danger">Hapus</a>
                                     </td>
                                 </tr>

@@ -66,10 +66,10 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id`, `kd_buku`, `judul_buku`, `sampul`, `penerbit`, `pengarang`, `tahun_terbit`, `nomor_rak`, `jumlah`) VALUES
-(2, 'BK001', 'Bahasa Inggris', 'binggris.jpeg', 'Sinar Mas', 'Abdul Sahid', '2017', 10, 100),
-(3, 'BK002', 'Bahasa Indonesia', 'bindo.jpg', 'Sinar Dunia', 'Tajul', '2020', 10, 100),
-(4, 'BK003', 'Geografi', 'geografi.jpg', 'Sinar Mas', 'Tajul', '2020', 11, 100),
-(5, 'BK004', 'Sejarah', 'sejarah.jpg', 'Sinar Dunia', 'Tajul', '2020', 9, 100);
+(2, 'BK001', 'Bahasa Inggris', 'binggris.jpeg', 'Sinar Mas', 'Abu Huroi', '2017', 10, 100),
+(3, 'BK002', 'Bahasa Indonesia', 'bindo.jpg', 'Sinar Dunia', 'roby', '2020', 10, 100),
+(4, 'BK003', 'Geografi', 'geografi.jpg', 'Sinar Mas', 'roby', '2020', 11, 100),
+(5, 'BK004', 'Sejarah', 'sejarah.jpg', 'Sinar Dunia', 'roby', '2020', 9, 100);
 
 -- --------------------------------------------------------
 
@@ -114,7 +114,7 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`id`, `no_reg`, `nama_siswa`, `foto`, `jenis_kelamin`, `kelas`, `password`) VALUES
-(8, 'REG001', 'Tajul Arifin S', NULL, 'L', 'VII', '$2y$10$/rm33ODvbXA8z98FxA/tBeMF8L9y20jSM3dStM2OB5lKN0ANMLT46'),
+(8, 'REG001', 'roby ridobillah', NULL, 'L', 'VII', '$2y$10$/rm33ODvbXA8z98FxA/tBeMF8L9y20jSM3dStM2OB5lKN0ANMLT46'),
 (9, 'REG002', 'Bambang2', NULL, 'L', 'VII', '$2y$10$RMSZ1A20R1od7wFDratWoeJV8rWYmmc2xA.X7PIzwb79E9M1f3uZ2');
 
 -- --------------------------------------------------------

@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?= $title ?> | App Perpustakaan</title>
-    <link rel="shortcut icon" href="<?= base_url('assets/dist/img/logo.png') ?>" type="image/x-icon">
-    <link rel="icon" href="<?= base_url('assets/dist/img/logo.png') ?>" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= base_url('assets/dist/img/logo-endo.png') ?>" type="image/x-icon">
+    <link rel="icon" href="<?= base_url('assets/dist/img/logo-endo.png') ?>" type="image/x-icon">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="<?= base_url('assets/bower_components/bootstrap/dist/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/bower_components/font-awesome/css/font-awesome.min.css') ?>">
@@ -41,7 +41,7 @@
                             <li class="<?= ($title == 'History') ? 'active' : '' ?>"><a href="<?= base_url('page/history') ?>">Riwayat</a></li>
                             <?php endif; ?>
                             <li class="<?= ($title == 'Tentang') ? 'active' : '' ?>"><a href="<?= base_url('page/tentang') ?>">Tentang</a></li>
-                            <li class="<?= ($title == 'Kontak') ? 'active' : '' ?>"><a href="<?= base_url('page/kontak') ?>">Kontak Kami</a></li>
+                            <li class="<?= ($title == 'Kontak') ? 'active' : '' ?>"><a href="<?= base_url('page/kontak') ?>">Kontak</a></li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->

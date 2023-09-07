@@ -21,7 +21,7 @@
                     <table id="dataTable" class="table display responsive nowrap" style="width:100%">
                         <thead class="bg-primary">
                             <tr>
-                                <th>#</th>
+                                <th>No</th>
                                 <th>No Registrasi</th>
                                 <th>Nama Siswa</th>
                                 <th>Jenis Kelamin</th>
@@ -53,6 +53,7 @@
 </section>
 <!-- /.content -->
 
+<!-- tambah data siswa -->
 <div class="modal fade" id="modal-default">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -81,12 +82,12 @@
                     <div class="form-group">
                         <label for="kelas">Kelas</label>
                         <select name="kelas" id="kelas" class="form-control" required>
-                            <option value="VII">I</option>
-                            <option value="VIII">II</option>
-                            <option value="IX">III</option>
-                            <option value="VII">IV</option>
-                            <option value="VIII">V</option>
-                            <option value="IX">VI</option>
+                            <option value="I">I</option>
+                            <option value="II">II</option>
+                            <option value="III">III</option>
+                            <option value="IV">IV</option>
+                            <option value="V">V</option>
+                            <option value="VI">VI</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -110,6 +111,8 @@
 </div>
 <!-- /.modal -->
 
+
+<!-- update data -->
 <script>
     $(document).ready(function() {
         $('#addBuku').on('click', function() {
@@ -126,7 +129,7 @@
         $(document).on('click', '.edit', function() {
             let id = $(this).data('id');
             $('.modal-title').html('Edit Data Siswa');
-            $('#form').attr('action', '<?= base_url('buku/update/') ?>' + id);
+            $('#form').attr('action', '<?= base_url('siswa/update/') ?>' + id);
             $.ajax({
                 url: '<?= base_url('siswa/getdata/'); ?>'+id,
                 method: 'POST',

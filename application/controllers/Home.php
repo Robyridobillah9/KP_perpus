@@ -10,5 +10,6 @@ class Home extends CI_Controller
             'buku'     => $this->db->get('buku')->result_array()
         ];
         $this->template->load('user/template', 'user/home', $data);
+        
     }
 }

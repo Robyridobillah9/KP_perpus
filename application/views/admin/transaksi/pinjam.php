@@ -4,7 +4,7 @@
         Transaksi Peminjaman
     </h1>
     <ol class="breadcrumb">
-        <li><a href="<?= base_url('home') ?>"><i class="fa fa-dashboard"></i> Transaksi</a></li>
+        <li><a href="<?= base_url('home') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li class="active">Peminjaman</li>
     </ol>
 </section>

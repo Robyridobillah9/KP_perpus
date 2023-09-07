@@ -5,7 +5,7 @@
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li class="active">Dashboards</li>
     </ol>
 </section>
 
@@ -19,28 +19,14 @@
                 <div class="info-box-content">
                     <span class="info-box-text">Jumlah<br>Buku</span>
                     <span class="info-box-number"><?= $jml_buku ?></span>
-                    <a href="<?= base_url('buku') ?>">lihat selengkapnya ></a>
+                    <a href="<?= base_url('buku') ?>">Details ></a>
                 </div>
                 <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
         </div>
         <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box">
-                <span class="info-box-icon bg-red"><i class="fa fa-money"></i></span>
-
-                <div class="info-box-content">
-                    <span class="info-box-text">Jumlah<br>Denda</span>
-                    <span class="info-box-number"><?= $denda==null?'Rp.0':'Rp.'.number_format($denda) ?></span>
-                    <a href="<?= base_url('kategori') ?>">lihat selengkapnya ></a>
-                </div>
-                <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-
+        
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="info-box">
                 <span class="info-box-icon bg-green"><i class="fa fa-user"></i></span>
@@ -48,7 +34,7 @@
                 <div class="info-box-content">
                     <span class="info-box-text">Jumlah<br>Peminjaman</span>
                     <span class="info-box-number"><?= $pinjam ?></span>
-                    <a href="<?= base_url('peminjaman') ?>">lihat selengkapnya ></a>
+                    <a href="<?= base_url('transaksi/pinjam') ?>">Details></a>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -62,7 +48,7 @@
                 <div class="info-box-content">
                     <span class="info-box-text">Jumlah<br>Pengembalian</span>
                     <span class="info-box-number"><?= $kembali ?></span>
-                    <a href="<?= base_url('pengembalian') ?>">lihat selengkapnya ></a>
+                    <a href="<?= base_url('transaksi/kembali') ?>">Details ></a>
                 </div>
                 <!-- /.info-box-content -->
             </div>

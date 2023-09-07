@@ -1,6 +1,6 @@
 <div class="login-box">
     <div class="login-logo text-center">
-        <!-- <img src="<?= base_url('assets/dist/img/logo.png') ?>" alt="Logo Sanjaya" style="width: 200px;"> -->
+        <!-- <img src="<?= base_url('assets/dist/img/logo-endo.png') ?>" alt="Logo Roby" style="width: 200px;"> -->
         <a href=""><b>Admin</b> Login</a>
     </div>
     <!-- /.login-logo -->
