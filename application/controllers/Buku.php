@@ -1,13 +1,18 @@
 <?php
+//skrip tidak dapat diakses secara langsung melalui URL dan hanya dapat diakses melalui aplikasi web.
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Buku extends CI_Controller
 {
     public function index()
     {
+// make sure pengguna sudah login sebagai admin atau belum 
+
         if (!$this->session->userdata('isLogin') || $this->session->userdata('hak_akses') !== 'admin') {
             redirect(base_url());
         }
+        
+// pengambilan data buku terbaru dari database
 
         $query   = $this->db->query("SELECT MAX(kd_buku) as kd_buku from buku");
         $hasil   = $query->row();
@@ -15,6 +20,7 @@ class Buku extends CI_Controller
         $kd_buku = (int)$nourut + 1;
         $kd_buku = "BK".sprintf("%03s", $kd_buku);
 
+// tampilan manajemen buku dimuat
         $data = [
             'title'    => 'Buku',
             'buku'     => $this->db->order_by('id', 'desc')->get('buku')->result_array(),
@@ -24,12 +30,16 @@ class Buku extends CI_Controller
         $this->template->load('admin/template', 'admin/buku/index', $data);
     }
 
+// tambah data buku    
     public function add()
     {
+
+// make sure pengguna sudah login sebagai admin atau belum
         if (!$this->session->userdata('isLogin') || $this->session->userdata('hak_akses') != 'admin') {
             redirect(base_url());
         }
 
+        //check pengiriman form dan pengambilan data 
         if(isset($_POST)){
             $data = [
                 'kd_buku'       =>$this->input->post('kd_buku'),
@@ -41,11 +51,12 @@ class Buku extends CI_Controller
                 'jumlah'        =>$this->input->post('jumlah'),
             ];
             
+//konfigurasi upload 
             $config['upload_path']      = 'assets/img/buku/';
             $config['allowed_types']    = 'gif|jpg|png|jpeg';
 
             $this->load->library('upload', $config);
-
+//upload gambar
             if (!$this->upload->do_upload('sampul')){
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"Maaf, gagal upload foto buku: '.$this->upload->display_errors().'!</div>');
                 redirect('/buku');
@@ -67,6 +78,7 @@ class Buku extends CI_Controller
 
     public function update($id)
     {
+// make sure pengguna sudah login sebagai admin atau belum
         if (!$this->session->userdata('isLogin') || $this->session->userdata('hak_akses') != 'admin') {
             redirect(base_url());
         }
@@ -80,6 +92,9 @@ class Buku extends CI_Controller
                 'nomor_rak'     =>$this->input->post('nomor_rak'),
                 'jumlah'        =>$this->input->post('jumlah'),
             ];
+
+// konfigurasi upload
+
             $config['upload_path']      = 'assets/img/buku/';
             $config['allowed_types']    = 'gif|jpg|png|jpeg';
 
@@ -94,7 +109,7 @@ class Buku extends CI_Controller
                 }
             }
 
-            
+// update data buku berdasarkan id yang sesuai
             if($this->db->update('buku', $data, ['id'=>$id])){
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil Ubah Data!</div>');
                 redirect('/buku');
@@ -105,11 +120,13 @@ class Buku extends CI_Controller
         }
     }
 
+// ambil data buku berdassarkan ID
     public function getdata($id){
         $data = $this->db->get_where('buku', ['id'=>$id])->row_array();
         echo json_encode($data);
     }
 
+// Hapus Buku dari DB berdasarkan ID
     public function delete($id)
     {
         if (!$this->session->userdata('isLogin') || $this->session->userdata('hak_akses') != 'admin') {

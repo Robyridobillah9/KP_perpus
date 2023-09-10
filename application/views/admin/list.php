@@ -21,7 +21,7 @@
                     <table id="dataTable" class="table display responsive nowrap" style="width:100%">
                         <thead class="bg-primary">
                             <tr>
-                                <th>#</th>
+                                <th>No</th>
                                 <th>Username</th>
                                 <th>Nama Lengkap</th>
                                 <th>Jabatan</th>

@@ -13,11 +13,11 @@
 <section class="content">
     <!-- Info boxes -->
     <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="info-box">
                 <span class="info-box-icon bg-aqua"><i class="fa fa-book"></i></span>
                 <div class="info-box-content">
-                    <span class="info-box-text">Jumlah<br>Buku</span>
+                    <span class="info-box-text">Jumlah Buku</span>
                     <span class="info-box-number"><?= $jml_buku ?></span>
                     <a href="<?= base_url('buku') ?>">Details ></a>
                 </div>
@@ -27,12 +27,12 @@
         </div>
         <!-- /.col -->
         
-        <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="info-box">
                 <span class="info-box-icon bg-green"><i class="fa fa-user"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Jumlah<br>Peminjaman</span>
+                    <span class="info-box-text">Jumlah Peminjaman</span>
                     <span class="info-box-number"><?= $pinjam ?></span>
                     <a href="<?= base_url('transaksi/pinjam') ?>">Details></a>
                 </div>
@@ -41,12 +41,12 @@
             <!-- /.info-box -->
         </div>
         <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="info-box">
                 <span class="info-box-icon bg-yellow"><i class="fa fa-user"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Jumlah<br>Pengembalian</span>
+                    <span class="info-box-text">Jumlah Pengembalian</span>
                     <span class="info-box-number"><?= $kembali ?></span>
                     <a href="<?= base_url('transaksi/kembali') ?>">Details ></a>
                 </div>
@@ -56,7 +56,7 @@
         </div>
         <!-- /.col -->
 
-        <!-- fix for small devices only -->
+        <!-- fix untuk device kecil saja -->
         <div class="clearfix visible-sm-block"></div>
 
         

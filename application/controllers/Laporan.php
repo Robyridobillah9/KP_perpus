@@ -1,16 +1,19 @@
 <?php
+//skrip tidak dapat diakses secara langsung melalui URL dan hanya dapat diakses melalui aplikasi web.
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Laporan extends CI_Controller
 {
     public function __construct()
     {
+        //allias
         parent::__construct();
         $this->load->model('M_transaksi', 'm_transaksi');
     }
 
     public function index()
     {
+        // make sure pengguna sudah login sebagai keperpus atau belum
         if (!$this->session->userdata('isLogin') || $this->session->userdata('hak_akses') != 'keperpus') {
             redirect(base_url());
         }
@@ -21,6 +24,8 @@ class Laporan extends CI_Controller
 
     public function buat()
     {
+
+// make sure pengguna sudah login sebagai admin atau belum
         if (!$this->session->userdata('isLogin') || $this->session->userdata('hak_akses') != 'keperpus') {
             redirect(base_url());
         }

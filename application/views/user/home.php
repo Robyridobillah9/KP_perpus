@@ -22,13 +22,13 @@
     <?= $this->session->flashdata('message'); ?>
     <div class="row">
         <?php foreach ($buku as $bk) : ?>
-            <div class="col-md-3 col-sm-4 col-xs-6">
+            <div class="col-md-4 col-sm-4 col-xs-6">
                 <div class="box box-widget widget-user">
                     <div class="widget-user-header bg-black" style="background-image: url(<?= base_url('assets/img/buku/'.$bk['sampul']) ?>); background-size:cover; height:350px;">
                     </div>
                     <div class="box-footer" style="padding-top: 10px;">
                         <h3 style="margin-top:0"><?= $bk['judul_buku'] ?></h3>
-                        <p>Tahun Terbit: <?= $bk['tahun_terbit'] ?> -  <?= $bk['jumlah'] ?> Lembar</p>
+                        <p>Tahun Terbit: <?= $bk['tahun_terbit'] ?> |  Jumlah Buku  <?= $bk['jumlah'] ?> </p>
                         <button data-id="<?= $bk['id'] ?>" class="btn btn-sm btn-primary detail" data-toggle="modal" data-target="#modal-default" style="margin-top: 10px;">lihat detail</button>
                     </div>
                 </div>

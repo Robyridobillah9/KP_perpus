@@ -141,7 +141,7 @@
                                     <td id="nomor_rak"></td>
                                 </tr>
                                 <tr>
-                                    <td>Jumlah</td>
+                                    <td>Jumlah Buku</td>
                                     <td id="jumlah"></td>
                                 </tr>
                             </table>

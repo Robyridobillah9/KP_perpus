@@ -5,10 +5,11 @@ class Transaksi extends CI_Controller
 {
     public function __construct()
     {
+        //allias
         parent::__construct();
         $this->load->model('M_transaksi', 'm_transaksi');
     }
-
+//ambil data transaksi berdasarkan id dan convert ke JSON
     public function getdata($id)
     {
         $data = $this->m_transaksi->getById($id);
@@ -17,10 +18,11 @@ class Transaksi extends CI_Controller
 
     public function pinjam()
     {
+        // make sure pengguna sudah login sebagai admin atau belum
         if (!$this->session->userdata('isLogin') || $this->session->userdata('hak_akses') != 'admin') {
             redirect(base_url());
         }
-
+        //ambil data transaksi pinjam buku
         $data['title']  = 'Transaksi Pinjam';
         $data['transaksi'] = $this->m_transaksi->getPinjam();
         $this->template->load('admin/template', 'admin/transaksi/pinjam', $data);
@@ -28,10 +30,11 @@ class Transaksi extends CI_Controller
 
     public function kembali()
     {
+        // make sure pengguna sudah login sebagai admin atau belum
         if (!$this->session->userdata('isLogin') || $this->session->userdata('hak_akses') != 'admin') {
             redirect(base_url());
         }
-
+        //ambil data transaksi pengembalian buku
         $data['title']  = 'Transaksi Kembali';
         $data['transaksi'] = $this->m_transaksi->getKembali();
         $this->template->load('admin/template', 'admin/transaksi/kembali', $data);
@@ -42,7 +45,7 @@ class Transaksi extends CI_Controller
         if (!$this->session->userdata('isLogin') || $this->session->userdata('hak_akses') != 'admin') {
             redirect(base_url());
         }
-
+        //pengurangan jumlah buku setelah dipinjam
         $kd_buku = $this->input->post('kd_buku');
         $buku = $this->db->get_where('buku', ['kd_buku'=>$kd_buku])->row_array();
         $jml_buku = (int)$buku['jumlah'];
